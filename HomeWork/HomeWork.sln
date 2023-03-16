@@ -27,6 +27,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "009_Semicolon", "009_Semico
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{5C8587B4-88A3-4251-8195-0A69D63F3BED}"
 	ProjectSection(SolutionItems) = preProject
+		단축키.txt = 단축키.txt
 		메모리영역.txt = 메모리영역.txt
 		용어설명.txt = 용어설명.txt
 	EndProjectSection
@@ -61,7 +62,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "025_Const002", "025_Printf0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "026_TypeChange", "026_TtpeChange\026_TtpeChange.vcxproj", "{BEDFE7B0-B177-41C2-8009-B1C4B3F5321A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "027_Printf_s_Create", "027_Printf_s_Create\027_Printf_s_Create.vcxproj", "{AD915C9F-5F75-4915-B9FA-077B9CBA1CAC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "027_Printf_s", "027_Printf_s_Create\027_Printf_s_Create.vcxproj", "{AD915C9F-5F75-4915-B9FA-077B9CBA1CAC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "028_While", "028_While\028_While.vcxproj", "{A6A9E795-D539-4864-AB28-0C5CBB55FC5D}"
 EndProject
