@@ -52,4 +52,10 @@ int main()
         // * 주소값을 바꾸지 않겠다 = const chr
         // const char * const chr = &Test0;
     }
+
+    {
+
+        // 상수화된 변수는 무조건 초기화를 해줘야 한다
+        const int Value = 0;
+    }
 }

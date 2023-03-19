@@ -7,7 +7,7 @@ int main()
     // "aaaaaaa"
 
     // const char* const <= const char[8]
-    printf_s("aaaaaaa")
+    printf_s("aaaaaaa");
     {
         // 자료형이라는게 의미가 없기 때문에
         // 특정한 상황이 아니라면
