@@ -26,7 +26,7 @@ char TrimDelete(const char* _string)
 int main()
 {
 
-    const char* test = "ab    cde    ";
+    const char* test = "a    b c    d    e";
     TrimDelete(test);
     /*char Arr0[1024] = "a b c d e";
     char Arr1[1024] = "a    b c    d    e";

@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 
 
-inline int MyPrintf(const char* const _Value, ...)
+inline void MyPrintf(const char* const _Value, ...)
 {
 
 }
