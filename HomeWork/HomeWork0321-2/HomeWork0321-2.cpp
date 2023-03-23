@@ -1,28 +1,28 @@
 ﻿#include <iostream>
 #include <conio.h>
 
-void Total(
-    const char* const _AttackerName,
-    const char* const _DefenderName,
-    const int& _AttackerAtt,
-    const int& _DefenderAtt,
-    int& _AttackerHp,
-    int& _DefenderHp
-)
-{
-    printf_s("%s 의 스테이터스 ------------\n", _AttackerName);
-    printf_s("공격력 : %d\n", _AttackerAtt);
-    printf_s("체력 : %d\n", _AttackerHp);
-    printf_s("---------------------------\n");
-
-    printf_s("%s 의 스테이터스 ------------\n", _DefenderName);
-    printf_s("공격력 : %d\n", _DefenderAtt);
-    printf_s("체력 : %d\n", _DefenderHp);
-    printf_s("---------------------------\n");
-
-    printf_s("%s가 공격을 시작합니다\n", _AttackerName);
-    printf_s("%s가 %d의 데미지를 입었습니다.\n", _DefenderName, _AttackerAtt);
-}
+//void Total(
+//    const char* const _AttackerName,
+//    const char* const _DefenderName,
+//    const int& _AttackerAtt,
+//    const int& _DefenderAtt,
+//    int& _AttackerHp,
+//    int& _DefenderHp
+//)
+//{
+//    printf_s("%s 의 스테이터스 ------------\n", _AttackerName);
+//    printf_s("공격력 : %d\n", _AttackerAtt);
+//    printf_s("체력 : %d\n", _AttackerHp);
+//    printf_s("---------------------------\n");
+//
+//    printf_s("%s 의 스테이터스 ------------\n", _DefenderName);
+//    printf_s("공격력 : %d\n", _DefenderAtt);
+//    printf_s("체력 : %d\n", _DefenderHp);
+//    printf_s("---------------------------\n");
+//
+//    printf_s("%s가 공격을 시작합니다\n", _AttackerName);
+//    printf_s("%s가 %d의 데미지를 입었습니다.\n", _DefenderName, _AttackerAtt);
+//}
 
 void Damage(
     const char* const _AttName, // 때리는 쪽의 이름
@@ -70,7 +70,7 @@ int main()
 
         Damage("Player", "Monster", PlayerAtt, MonsterHp);
         system("cls");
-        Total("Player", "Monster", PlayerAtt, MonsterAtt, PlayerHp, MonsterHp);
+        // Total("Player", "Monster", MonsterAtt, PlayerAtt, PlayerHp, MonsterHp);
         _getch();
 
         if (0 >= MonsterHp)
@@ -82,9 +82,12 @@ int main()
         }
 
         system("cls");
+        StatusRender("Player", PlayerAtt, PlayerHp);
+        StatusRender("Monster", MonsterAtt, MonsterHp);
+        _getch();
         Damage("Monster", "Player", MonsterAtt, PlayerHp);
         system("cls");
-        Total("Monster", "Player", PlayerAtt, MonsterAtt, MonsterHp, PlayerHp);
+        // Total("Player", "Monster", PlayerAtt, MonsterAtt, PlayerHp, MonsterHp);
         _getch();
 
         if (0 >= PlayerHp)

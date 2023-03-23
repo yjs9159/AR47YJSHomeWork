@@ -24,6 +24,11 @@ int main()
     Player NewPlayer;
     Monster NewMonster;
 
-    
-    NewMonster.
+    Player Newplayer = Player();
+
+    // 보통 행동을 만들 public으로 만든다
+
+    // 객체의 사용법 => .누르고
+    // 플레이어 내부에 있는 것들을 끄집어 내서 사용한다
+    // NewPlayer.Att
 }
