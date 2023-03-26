@@ -10,7 +10,7 @@ public:
 	Number(int _Value)
 		:Value(_Value)
 	{
-
+		
 	}
 
 };
