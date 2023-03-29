@@ -3,6 +3,10 @@
 
 ConsoleGameScreen ConsoleGameScreen::MainScreen;
 
+ConsoleGameScreen::ConsoleGameScreen()
+{
+}
+
 void ConsoleGameScreen::ScreenClear()
 {
 	for (size_t y = 0; y < ScreenYSize; y++)
@@ -63,10 +67,14 @@ void ConsoleGameScreen::SetScreenCharacter(const int2& _Pos, char _Ch)
 	Arr[_Pos.Y][_Pos.X] = _Ch;
 }
 
-
-
-ConsoleGameScreen::ConsoleGameScreen()
+void ConsoleGameScreen::SetScreenBullet(const int2& _Pos, char _Ch)
 {
+	if (true == IsScreenOver(_Pos))
+	{
+		return;
+	}
+
+	Arr[_Pos.Y][_Pos.X] = _Ch;
 }
 
 int2 ConsoleGameScreen::GetScreenSize()

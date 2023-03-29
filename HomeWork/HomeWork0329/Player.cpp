@@ -5,7 +5,7 @@
 
 Player::Player()
 {
-
+	MyBullet = Bullet();
 }
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
@@ -61,9 +61,35 @@ void Player::Input()
 			Pos.Y += 1;
 		}
 		break;
+	case 'f':
+	case 'F':
+		if (!IsFire()) // 지금은 총알 1발만 가지고있으니 발사중 아니라면
+		{
+			Shoot();	//총알 발사시키는 함수
+		}
 	default:
 		break;
 	}
+	///////////////////////////////////////////////////////////////
+	if (true == IsFire())
+	{
+		MyBullet.Move();		
+		if (MyBullet.Get_Dead())
+		{
+			Fire = false;		
+		}
+	}
+	///////////////////////////////////////////////////////////////
 
 	Sleep(InterFrame);
+}
+
+void Player::Shoot()
+{
+	int2 Dir(-1, 0);
+
+	Fire = true;
+	MyBullet.Set_Pos(Pos);
+	MyBullet.Set_Dir(Dir);
+	MyBullet.Set_Dead(false);
 }

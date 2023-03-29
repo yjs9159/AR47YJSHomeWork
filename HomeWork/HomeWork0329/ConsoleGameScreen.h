@@ -25,6 +25,8 @@ public:
 
 	void SetScreenCharacter(const int2& _Pos, char _Ch);
 
+	void SetScreenBullet(const int2& _Pos, char _Ch);
+
 protected:
 
 private:

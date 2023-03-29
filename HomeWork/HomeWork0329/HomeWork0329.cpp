@@ -22,12 +22,13 @@ int main()
 
 		ConsoleGameScreen::GetMainScreen().ScreenClear();
 
+		ConsoleGameScreen::GetMainScreen().SetScreenBullet(NewPlayer.GetBulletPos(), '@'); 
 		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(NewPlayer.GetPos(), '*');
 
 		ConsoleGameScreen::GetMainScreen().ScreenPrint();
 
 		NewPlayer.Input();
-
 	}
 
 }
+
