@@ -13,4 +13,14 @@ ctrl + 스페이스
  ctrl + shift + g
   #include <파일명>의 내용으로 이동
 
-  ctrl + r + r\
+  ctrl + r + r
+   특정변수의 이름 관련된것들 다 바꾸기
+
+  crtl + k + o
+   같은 이름의 Header cpp 전환
+
+   단축키 변경법
+   상단메뉴 도구 -> 옵션 -> 환경 -> 키보드
+
+ 프로젝트 선택하거 ctrl + shift + a
+ 클래스 및 새 항목 추가
