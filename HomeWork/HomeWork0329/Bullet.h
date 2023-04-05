@@ -14,12 +14,30 @@ public:
 
 public:
 	//Get. Set
-	inline int2 Get_Pos() { return Position; }	//총알 위치 반환
-	inline bool Get_Dead() { return IsDead; }	//총알 상태 반환
+	inline int2 Get_Pos() 
+	{ 
+		return Position; 
+	}	//총알 위치 반환
 
-	inline void Set_Pos(int2 Pos) { Position = Pos; }	//총알 위치 바꾸기
-	inline void Set_Dir(int2 Dir) { MoveDir = Dir; }	//총알 방향 바꾸기
-	inline void Set_Dead(bool Dead) { IsDead = false; }	//총알 상태 바꾸기
+	inline bool Get_Dead() 
+	{ 
+		return IsDead; 
+	}	//총알 상태 반환
+
+	inline void Set_Pos(int2 Pos) 
+	{ 
+		Position = Pos; 
+	}	//총알 위치 바꾸기
+	
+	inline void Set_Dir(int2 Dir) 
+	{ 
+		MoveDir = Dir; 
+	}	//총알 방향 바꾸기
+
+	inline void Set_Dead(bool Dead) 
+	{ 
+		IsDead = false; 
+	}	//총알 상태 바꾸기
 
 private:
 	int2 MoveDir = { 0, 0 };		//총알이 움직일 방향

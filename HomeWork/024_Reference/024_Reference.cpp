@@ -47,3 +47,11 @@ int main()
     // 코드를 짜는 프로그래머의 의도에 따라 절대로 값을 비워 놓을 수 없으면 Reference => 왜? 무조건 값을 넣어줘야 하니까
 
 }
+void function(int* a)
+{
+
+}
+void function(int& a)
+{
+    return;
+}

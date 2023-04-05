@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <vector>
 
 // 이제부터 자료형 unsigned __int64를 size_t라고 부르겠다
 // typedef        unsigned __int64 size_t;
@@ -13,7 +14,6 @@
 
 // using int myint; => typedef와 using은 똑같은 거
 
-
 int main()
 {
 	// 지역변수 선언
@@ -21,6 +21,4 @@ int main()
 	int Value = 20;
 	
 	time_t DTime = time(0);
-	
-	
 }
