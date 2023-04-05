@@ -6,70 +6,89 @@ typedef int DataType;
 class GameEngineArray
 {
 public:
-	// delete Function
-	GameEngineArray(const GameEngineArray& _Other) = delete;
-	GameEngineArray(GameEngineArray&& _Other) noexcept = delete;
-	GameEngineArray& operator=(GameEngineArray&& _Other) noexcept = delete;
+    // delete Function
+    GameEngineArray(const GameEngineArray& _Other) = delete;
+    GameEngineArray(GameEngineArray&& _Other) noexcept = delete;
+    GameEngineArray& operator=(GameEngineArray&& _Other) noexcept = delete;
 
 
-	// constrcuter destructer
-	GameEngineArray(size_t _Value)
-		: ArrPtr(new DataType[_Value])
-		, ArrCount(_Value)
-	{
-		// ArrPtr = new int[100];
-	}
+    // constrcuter destructer
+    GameEngineArray(size_t _Value)
+        : ArrPtr(new DataType[_Value])
+        , ArrCount(_Value)
+    {
+        // ArrPtr = new int[100];
+    }
 
-	~GameEngineArray()
-	{
-		if (nullptr != ArrPtr)
-		{
-			delete[] ArrPtr;
-			ArrPtr = nullptr;
-		}
-	}
+    ~GameEngineArray()
+    {
+        if (nullptr != ArrPtr)
+        {
+            delete[] ArrPtr;
+            ArrPtr = nullptr;
+        }
+    }
 
-	GameEngineArray& operator=(const GameEngineArray& _Other)
-	{
-		ArrCount = _Other.ArrCount;
-		ArrPtr = _Other.ArrPtr;
-		return *this;
-	}
+    GameEngineArray& operator=(const GameEngineArray& _Other)
+    {
+        ArrCount = _Other.ArrCount;
 
-	size_t Count()
-	{
-		return ArrCount;
-	}
+        ReSize(ArrCount);   
+        for (int i = 0; i < ArrCount; ++i)   
+            ArrPtr[i] = _Other.ArrPtr[i];
 
-	DataType& operator[](size_t _Index)
-	{
-		return ArrPtr[_Index];
-	}
+        return *this;
+    }
 
-	void ReSize(int _Value)
-	{
-		// 20줄 안팍.
-		// 삼항 연산자 써보시면 좋을겁니다.
+    size_t Count()
+    {
+        return ArrCount;
+    }
 
-		// 기존의 할당된 배열을 알고 있는것은 
-		// 섣불리 지우면 안된다.
+    DataType& operator[](size_t _Index)
+    {
+        return ArrPtr[_Index];
+    }
 
-		// 기존의 있던 값에서 현재의 배열이 복사한다음 삭제해야 한다.
+    void ReSize(int _Value)
+    {
+        // 20줄 안팍.
+        // 삼항 연산자 써보시면 좋을겁니다.
 
-		if (nullptr != ArrPtr)
-		{
-			delete[] ArrPtr;
-			ArrPtr = nullptr;
-		}
+        // 기존의 할당된 배열을 알고 있는것은 
+        // 섣불리 지우면 안된다.
 
-		ArrPtr = new DataType[_Value];
-		ArrCount = _Value;
-	}
+        // 기존의 있던 값에서 현재의 배열이 복사한다음 삭제해야 한다.
+        //반복문으로 내용물 복사할꺼야~
+        //내용물 복사한거 담을 배열 생성 먼저
+        DataType* tempPtr = new DataType[_Value]; 
+
+        int repeat = (_Value >= ArrCount) ? ArrCount : _Value;
+
+        for (int i = 0; i < repeat; ++i)
+        {
+            tempPtr[i] = ArrPtr[i];   
+        }
+
+        DataType* temp = ArrPtr;
+        ArrPtr = tempPtr;
+        tempPtr = temp;   
+        temp = nullptr;
+
+        if (nullptr != tempPtr)
+        {
+            delete[] tempPtr;
+            tempPtr = nullptr;
+        }   
+
+        ArrCount = _Value; 
+
+    }
 
 protected:
 
 private:
-	size_t ArrCount;
-	DataType* ArrPtr = nullptr;
+    size_t ArrCount;
+    DataType* ArrPtr = nullptr;
 
 };

@@ -26,29 +26,32 @@ int main()
             Array0[i] = i;
         }
 
-        //          700번지
-        // ArrPtr = new int[10]
-        // 숙제 1 기존의 데이터를 보존하는것을 말하는것이고
-        // 숙제 2 줄어들든 커지든 데이터는 보존되어야 한다.
-        // Array0.ReSize(5);
-        Array0.ReSize(15);
-
-        // Array0.ReSize(15);
-
         for (size_t i = 0; i < Array0.Count(); i++)
         {
             printf_s("%d\n", Array0[i]);
         }
 
-        // GameEngineArray Array1;
-        // Array0 = Array1;
+        printf_s("---------------------------------------\n");
+
+        //          700번지
+        // ArrPtr = new int[10]
+        // 숙제 1 기존의 데이터를 보존하는것을 말하는것이고
+        // 숙제 2 줄어들든 커지든 데이터는 보존되어야 한다.
+        // Array0.ReSize(5);
+        Array0.ReSize(3);
+
+        for (size_t i = 0; i < Array0.Count(); i++)
+        {
+            printf_s("%d\n", Array0[i]);
+        }
+        printf_s("---------------------------------------\n");
     }
 
     {
         GameEngineArray Array0(10);
         GameEngineArray Array1(5);
 
-        // 숙제3 왜 터지는지 이해하고 고쳐라.
+        // 숙제3 왜 터지는지 이해하고 고쳐라. //안터지면 된거겠지?
         Array1 = Array0;
     }
 
@@ -73,5 +76,4 @@ int main()
     }
 
 
-    // std::cout << "Hello World!\n";
 }
