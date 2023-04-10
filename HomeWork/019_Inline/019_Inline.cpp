@@ -10,5 +10,6 @@ inline void Test()
 
 int main()
 {
+    Test();
     
 }

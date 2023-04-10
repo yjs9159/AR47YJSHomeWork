@@ -1,5 +1,12 @@
 ﻿#include <iostream>
 
+int Plus(int _Left, int _Right)
+{
+    return _Left + _Right;
+}
+
+
+
 int main()
 {
     int Left = 7;

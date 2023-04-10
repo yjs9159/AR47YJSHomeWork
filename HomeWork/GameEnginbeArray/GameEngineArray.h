@@ -59,8 +59,7 @@ public:
         // 섣불리 지우면 안된다.
 
         // 기존의 있던 값에서 현재의 배열이 복사한다음 삭제해야 한다.
-        //반복문으로 내용물 복사할꺼야~
-        //내용물 복사한거 담을 배열 생성 먼저
+       
         DataType* tempPtr = new DataType[_Value]; 
 
         int repeat = (_Value >= ArrCount) ? ArrCount : _Value;
