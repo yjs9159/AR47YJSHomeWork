@@ -1,13 +1,9 @@
-﻿// HomeWork0324.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
-#include <iostream>
+﻿#include <iostream>
 #include <conio.h>
-// 운영체제가 도와줄수밖에 없다.
-#include <Windows.h>
+// 내 프로그램을 멈추게 하는 건 운영체제의 도움을 받아야 한다
+#include <windows.h>
 
-// 이게 0단계
-// 근본오브 근본 수학 물리 
+// 이게 1단계
 class int2
 {
 public:
@@ -15,17 +11,13 @@ public:
 	int Y = 0;
 
 public:
+
 	int2 Half()
 	{
 		return { X / 2, Y / 2 };
 	}
 
 public:
-	// 이건 내일 합니다.
-	//int2() 
-	//{
-	//}
-
 	int2(int _X, int _Y)
 		: X(_X), Y(_Y)
 	{
@@ -33,13 +25,12 @@ public:
 	}
 };
 
-// 이게 1단계
-// 근본오브 근본 수학 물리 
 class ConsoleGameScreen
 {
-private:
+private:					// 생성자를 private로 만듦으로써 여러개의 스크린을 만드는 것을 억제한닽
 	ConsoleGameScreen()
 	{
+
 	}
 
 	static ConsoleGameScreen MainScreen;
@@ -50,18 +41,15 @@ public:
 		return MainScreen;
 	}
 
-	// 메모리 영역 자체가 달라졌다고 봐야합니다.
-public:
-	// 클래스 내부에 전역변수를 선언할수가 있습니다.
+	// 클래스 내부에 전역변수를 선언할 수 있다
+	// static을 통해서 
 	static const int ScreenYSize = 10;
 	static const int ScreenXSize = 20;
 
-	static int2 GetScreenSize()
+	static int2 GetScreenSize() // 나의 스크린 사이즈를 가져오는 함수
 	{
 		return int2{ ScreenXSize, ScreenYSize };
 	}
-
-
 	void ScreenClear()
 	{
 		for (size_t y = 0; y < ScreenYSize; y++)
@@ -79,36 +67,39 @@ public:
 		{
 			for (size_t x = 0; x < ScreenXSize; x++)
 			{
-				// Arr[y][x] = 'b';
 				printf_s("%c", Arr[y][x]);
 			}
 			printf_s("\n");
 		}
 	}
-
-	// 이녀석을 무조건 사용해서 플레이어가 바깥으로 못나가게 만드세요.
+	// IsScreenOver()와 InPut()
+	// ConsoleGameScreen.IsScreenOver
+	// Player.Input
 	bool IsScreenOver(const int2& _Pos) const
 	{
-		if (0 > _Pos.X)
+ 		if (0 > _Pos.X)
 		{
-			return true;
+			return true; // 화면에서 나갔다 => true
+						 // 화면에서 안나갔다 => false
 		}
 
 		if (0 > _Pos.Y)
 		{
-			return true;
+			return true; // 화면에서 나갔다 => true
+						 // 화면에서 안나갔다 => false
 		}
 
 		if (ScreenXSize <= _Pos.X)
 		{
-			return true;
+			return true; // 화면에서 나갔다 => true
+						 // 화면에서 안나갔다 => false
 		}
 
 		if (ScreenYSize <= _Pos.Y)
 		{
-			return true;
+			return true; // 화면에서 나갔다 => true
+						 // 화면에서 안나갔다 => false
 		}
-
 		return false;
 	}
 
@@ -124,19 +115,15 @@ public:
 
 private:
 	char Arr[ScreenYSize][ScreenXSize] = { 0, };
-
+	 
 };
 
 ConsoleGameScreen ConsoleGameScreen::MainScreen;
 
-
-/////////////////////////////////////////////////////////////////// 엔진
-
-// 2단계 컨텐츠
-// 클래스가 다른 클래스를 알아야 합니다.
 class Player
 {
 public:
+
 	Player()
 	{
 
@@ -152,72 +139,72 @@ public:
 		Pos = _Value;
 	}
 
-	// 화면바깥으로 못나가게 하세요. 
-	void Input(ConsoleGameScreen& _Screen)
+
+	// 화면 바깥으로 못나가게 하기
+	// ConsoleGameScreen 클래스의 IsScreenOver를(무조건 사용해서) InPut함수와 연결하기
+	void Input()
 	{
+		
+		/*이건 내가 키를 눌렀다면 1
+		아니라면 0을 리턴하는 함수고 정지하지 않는다
+		키를 눌렀다는 것을 체크해주는 함수*/
 		if (0 == _kbhit())
 		{
-			// 0.5초간 멈춘다.
+			// 0.5초간 멈춘다
+			// 키가 안눌렸다면 0.5초간 멈추게 한 다음에 위로 올릴 것이다
 			Sleep(InterFrame);
-			// 일부러 멈추게 만들겁니다.
-			// continue; 반복문 내부에서만 사용가능
+			// 일부러 멈추게 만들것이다
 			return;
 		}
 
+		// 어떤키를 눌렀는지 알려주는 함수
+		
 		char Ch = _getch();
-
-		int2 NextPos = { 0, 0 };
 
 		switch (Ch)
 		{
 		case 'a':
 		case 'A':
-			NextPos = Pos;
-			NextPos.X -= 1;
-			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+			Pos.X -= 1;							// 일단 인풋 받은데로 이동하자
+			if (ConsoleGameScreen::GetMainScreen().IsScreenOver(Pos))	// 이동은 했는데 맞는지 확인해보자
 			{
-				Pos.X -= 1;
-			}
+				Pos.X += 1;						// 화면 밖으로 나가면 true니까 여기 들어온건 화면 밖이다
+			}									// -> 인풋 받은데로 이동했더니 화면 밖이다 -> 뒤로 되돌리자
 			break;
+
 		case 'd':
 		case 'D':
-			NextPos = Pos;
-			NextPos.X += 1;
-			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
-			{
 				Pos.X += 1;
-			}
+				if (ConsoleGameScreen::GetMainScreen().IsScreenOver(Pos))
+				{
+					Pos.X -= 1;
+				}
 			break;
-		case 'w':
-		case 'W':
-			NextPos = Pos;
-			NextPos.Y -= 1;
-			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
-			{
-				Pos.Y -= 1;
-			}
-			break;
+
 		case 's':
 		case 'S':
-			NextPos = Pos;
-			NextPos.Y += 1;
-			if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
-			{
 				Pos.Y += 1;
-			}
+				if (ConsoleGameScreen::GetMainScreen().IsScreenOver(Pos))
+				{
+					Pos.Y -= 1;
+				}
 			break;
+
+		case 'w':
+		case 'W':
+				Pos.Y -= 1;
+				if (ConsoleGameScreen::GetMainScreen().IsScreenOver(Pos))
+				{
+					Pos.Y += 1;
+				}
+			break;
+
 		default:
 			break;
 		}
 
 		Sleep(InterFrame);
 	}
-
-	//void SetScreen(ConsoleGameScreen* _Screen)
-	//{
-	//	Screen = _Screen;
-	//}
-
 protected:
 
 private:
@@ -231,6 +218,7 @@ int main()
 {
 	Player NewPlayer = Player();
 
+	// int2 NewPos = int2{ 5,5 };
 	int2 ScreenSize = ConsoleGameScreen::GetMainScreen().GetScreenSize();
 	NewPlayer.SetPos(ScreenSize.Half());
 
@@ -238,7 +226,10 @@ int main()
 	{
 		system("cls");
 
-		ConsoleGameScreen::GetMainScreen().ScreenClear();
+		ConsoleGameScreen::GetMainScreen().ScreenClear(); // 화면을 깔끔하게 지운다
+
+		// 게임의 프레임워크와 동일하다
+		// 이제부터 내부에서 객체들이 활동하는 것
 
 		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(NewPlayer.GetPos(), '*');
 
@@ -246,7 +237,6 @@ int main()
 
 		NewPlayer.Input();
 
+
 	}
-
-
 }

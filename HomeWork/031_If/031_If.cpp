@@ -1,37 +1,68 @@
 ﻿#include <iostream>
 
+int ReturnValue()
+{
+	return 10;
+}
+
+
 int main()
 {
-    /*if(메모리영역)
-        {
-            실행코드
-        }
-        참이면 실행코드가 실행
-        거짓이면 실행코드가 실행되지 않는다*/
+	// if (메모리영역)
+	// {
+	//    실행코드
+	// }
+	// 참이면 실행코드가 실행되고
+	// 거짓이면 실행코드가 실행되지 않습니다.
 
-    int Value = 0;
 
-    if (0)
-    {
-        printf_s("실행됩니다0");
-    }
+	int Value = ReturnValue();
+	if (Value)
+	{
+		printf_s("실행됩니다");
+	}
 
-    else if (1)
-    {
-        printf_s("실행됩니다1");
-    }
+	if (ReturnValue())
+	{
+		printf_s("실행됩니다1");
+	}
 
-    else if (2)
-    {
-        printf_s("실행됩니다2");
-    }
+	// 한줄치기 극혐
+	if (ReturnValue())
+		printf_s("실행됩니다1");
 
-    else if (3)
-    {
-        printf_s("실행됩니다3");
+	if (0);
 
-    }
+	{
+		printf_s("실행됩니다1");
+	}
 
-    
+
+	if (printf_s("10"), 0)
+	{
+		printf_s("실행됩니다0");
+	}
+	else if (0)
+	{
+		printf_s("실행됩니다1");
+	}
+	else if (0)
+	{
+		printf_s("실행됩니다2");
+	}
+	else if (0)
+	{
+		printf_s("실행됩니다1");
+	}
+	else if (0)
+	{
+		printf_s("실행됩니다2");
+	}
+	else
+	{
+		// 모든 if문들이 실패하면 무조건 else내부의 코드가 실행됩니다.
+		printf_s("다 실패해서 실행됩니다");
+	}
+
 
 }

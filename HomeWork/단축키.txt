@@ -4,6 +4,12 @@ ctrl + a
 ctrl + k + f
 선택 범위 문법 정렬
 
+ctrl + k + c
+선택 범위 전체 주석
+
+ctrl + k + u
+선택 범위 전체 주석 해체
+
 ctrl + 스페이스
 자동 완성
 

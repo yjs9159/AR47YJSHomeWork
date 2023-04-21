@@ -15,5 +15,4 @@ int main()
     __int64 Address11 = (__int64)&Arr[1][1];
     int value11 = Arr[1][1];
 
-    // nd
 }

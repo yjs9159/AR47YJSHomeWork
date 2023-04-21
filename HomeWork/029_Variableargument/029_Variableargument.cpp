@@ -1,21 +1,16 @@
 ﻿#include <iostream>
 
-// 가변 인자
+// 가변인자는 인자를 넣어주는 부분에 ...만 넣는다
 void VarFunction(...)
 {
 
 }
 
-//                100     108     116 
 void TestFunction(int _1, int _2, int _3)
 {
     int* ValuePtr0 = &_1;
     int* ValuePtr1 = &_2;
     int* ValuePtr2 = &_3;
-
-    int Value1 = ValuePtr0[0];
-    int Value2 = ValuePtr0[2];
-    int Value3 = ValuePtr0[4];
 
     __int64 Address0 = 0;
     __int64 Address1 = 0;
@@ -31,19 +26,17 @@ void TestFunction2(int _1, ...)
 {
 
 }
+
 int main()
 {
     VarFunction(2, 3, 4, 7, 9, 1, 1, 1, 1, 1);
-
+    // 가변인자는 자료형과 갯수가 상관이 없다
     VarFunction("1", "2", "3", "4");
-
+    // 섞여도 된다
     VarFunction("1", 2, 3, "하하하하");
+    
 
     TestFunction(10, 20, 30);
 
     TestFunction2(5, 1, 2, 3, 4, 5);
-
-    // %를 사용하게 되면 이는 포매팅 문자라고 해서
-    // 숫자나 다양한 다른 변수들을 사용해서 출력을 요청하는 것이다
-    // printf_s("%d %d %d", 1);
 }

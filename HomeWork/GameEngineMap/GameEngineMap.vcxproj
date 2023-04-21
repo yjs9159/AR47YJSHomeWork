@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c4ccf23c-a923-4b63-899c-40b1b0885866}</ProjectGuid>
-    <RootNamespace>My055ClassDeclaration</RootNamespace>
+    <ProjectGuid>{1eaf6449-94b4-44fe-898d-b43baef1a413}</ProjectGuid>
+    <RootNamespace>GameEngineMap</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="055_ClassDeclaration.cpp" />
+    <ClCompile Include="GameEngineMap.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameEngineMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,8 @@
 
 class Player
 {
-// private: 디폴트 접근제한 지정자
+// private: class의 디폴트 접근제한 지정자
+private:
     int Att = 10;
     int Def = 2;
     int Hp = 100;
@@ -12,7 +13,8 @@ class Player
 
 struct Monster
 {
-// public: 디폴트 접근제한 지정자
+// public: struct의 디폴트 접근제한 지정자
+public:
     int Att = 10;
     int Def = 2;
     int Hp = 100;

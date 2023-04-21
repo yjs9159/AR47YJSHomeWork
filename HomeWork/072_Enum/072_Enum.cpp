@@ -30,5 +30,5 @@ int main()
 {
     FightUnit NewUnit;
 
-    NewUnit.SetJobType
+    // NewUnit.SetJobType
 }

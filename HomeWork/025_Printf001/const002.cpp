@@ -1,61 +1,66 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 
 int main()
 {
-    {
-        int Value0 = 10;
-        int Value1 = 10;
+	{
+		int Value0 = 10;
+		int Value1 = 10;
 
-        int* Ptr = &Value0;
+		int* Ptr = &Value0;
+		const int* cPtr = &Value1;
 
-        const int* cPtr = &Value1;
+		// 자료형*
+		const int* cPtr = &Value1;
+		// *뒤에 뭔가를 붙이는 건 이제부터 *에 영향을 주는 문법이 된다
 
-        //
-        const int* cPtr = &Value1;
-        // *뒤에 뭔가를 붙이는건 이제부터 *에 영향을 주는 문법이 된다
+		// const int*
+		// 포인터형 변수가 사용할 때 *을 붙인다는 것은
+		// 자신의 자료형에서 *을 뺀 자료형으로 사용하겠다는 뜻이다
+		// ex) *Ptr
+		// Ptr == const int*
+		// *Ptr == const int
+		// *cPtr = 20;
+		const int ValueTTT0 = 10;
 
+		// int const ValueTTT1 = 10;
+		// ValueTTT0과 ValueTTT1은 완전히 동일하지만 const int로 쓰자
 
-        // const int*
-        // 포인터형 변수가 사용할 때 *을 붙인다는 것은
-        // 자신의 자료형에서 *을 뺀 자료형으로 사용하겠다는 뜻이다
-        // ex) *Ptr
-        // Ptr == const int*는
-        // *Ptr == cont int으로 바꿔서 사용 가능
-        // 그러므로 
-        // *cPtr = 20;은 고칠 수 없다
+		int const Value00 = 10;
+		// Value00 = 20; => 안고쳐짐
+		const int Value01 = 10;
+		// Value01 = 30; => 안고쳐짐
+		// const를 앞에 붙이든 뒤에 붙이든 둘 다 똑같이 안고쳐짐
+	}
 
-        int const ValueTTT0 = 10; // const가 뒤에 붙든
+	{
+		// 100번지에 있는 A
+		char Test0 = 'A';
+		// 110번지에 있는 B
+		char Test1 = 'B';
 
-        const int ValueTTT1 = 10; // 앞에 붙든 똑같다. 하지만 앞에 쓸 것
-    }
-    {
-        // 100번지에 있는 A
-        char Test0 = 'A';
-        // 110번지에 있는 B
-        char Test1 = 'A';
+		// 120번지에 있는 100번지
+		const char* Chr = &Test0;
+		// const char라서 변경X
+		// *Chr = 'C'
+		
+		// Chr = &Test1; <= 이건 된다
 
-        // 120번지에 있는 100번지
-        // 100번지 안에 있는 값을 const화 시키는게 아니라
-        // 100번지라고 하는 내가 가리키고 있는
-        // 주소 자체를 못 바꾸게 하고 싶을 때 사용한다
-        const char* const chr = &Test0;
+		// 100번지 안에 있는 값을 const화 시키는게 아니라 
+		// 지금 Chr이 가리키는 100번지(주소)라는 것 자체를 다시는 못 바꾸게 하고 싶으면
+		// 값도 못 바꾸고 가리키는 것도 못 바꾸게 된다
+		const char* const Chr = &Test0;
 
-        // 값은 바꿀 수 있지만 주소는 못바꿈
-        //char* const chr = &Test0;
+		// 별을 기준으로
+		// 별 앞 쪽은 내가 가리키고자 하는 대상의 값이고
+		// 별 뒤 쪽은 
+		// 자료형을 바꾸지 않겠다 | 주소값을 바꾸지 않겠다  
+		// const char            * const           Chr = &Test0;
 
+	}
 
-        //chr = &Test1;
+	{
+		// 상수화 변수는 무조건 초기화 해줘야 한다
+		const int Value = 0;
+	}
 
-        // 별을 기준으로 봐야한다
-        // 내가 가리키고자 하는 대상의 값 * = const char
-        // * 주소값을 바꾸지 않겠다 = const chr
-        // const char * const chr = &Test0;
-    }
-
-    {
-
-        // 상수화된 변수는 무조건 초기화를 해줘야 한다
-        const int Value = 0;
-    }
 }

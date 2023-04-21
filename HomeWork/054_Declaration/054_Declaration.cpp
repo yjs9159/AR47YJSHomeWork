@@ -1,35 +1,44 @@
-﻿#include <iostream>
+﻿
+#include <iostream>
 
 // 구현이라고 하는 문법은
-// 선언과 함수체를 같이 놓은 문법을 구현된 함수라고 부른다
+// 선언과 함수체를 같이 놓은 문법을 구현이라고 부른다
+
 // 함수 선언만 따로 놓을 수가 있다
 
+void Function();
+
 // 함수 선언
-void Fucntion()
+void Function()
 // 함수체
 {
 
-}
-
-// 전역 함수의 경우에는 선언을 몇개를 해도 상관없다
-void Function2();
-void Function2();
-void Function2();
-void Function2();
-
-// 클래스는 문법상 선언과 구현이 내부에서 혼재되어 있을 수 도 있고
-// 아닐 수도 있는 특이한 놈이라서
-// 클래스 자체는 2개를 선언할 수는 없다
-
-class Player
-{
-public:
-    // 일반적인 멤버변수는 이미 그 자체로 선언이면서 구현이다
-    int Hp;
-public:
-    void Damage();
 };
+
+// 이러이러한 함수가 있을거야
+// 일단 믿고 호출하고 컴파일해줘
+// 구현은 분명히 나중에 있을거야
+void Function0();			
+void Function1();
+void Function2();
+
+void Function0()			// Function0은 Function2를 호출해야 한다
+{
+	Function2();			// 이 코드가 실행 될 때 Function2는 아직 모르는 상태
+}							// 그러므로 함수를 선언 먼저 하고 구현을 나중에 한다
+void Function1()			// Function1은 Function0을 호출해야 한다
+{
+	Function0();
+}
+void Function2()			// Function2는 Function0을 호출해야 한다
+{
+	Function0();
+}
+// 보통 구현은 main함수 밑으로 뺀다
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	Function0();
+	Function1();
+	Function2();
 }

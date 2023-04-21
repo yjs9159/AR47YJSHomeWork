@@ -3,8 +3,14 @@
 class Player
 {
 public:
+    void Damage(/*Player* const this*/)
+    {
+
+        printf_s("맞았습니다");
+    }
+public:
     int Hp = 100;
-    int Att = 10;
+    int att = 10;
 };
 
 
@@ -17,7 +23,13 @@ int main()
     int* ValuePtr = nullptr;
     Player* NewPlayerPtr = &NewPlayer;
 
-    ValuePtr = nullptr;
-    // nullptr 익셉션이 난다
-    *ValuePtr = 20;
+    NewPlayerPtr = nullptr;
+    NewPlayerPtr->Damage();
+
+    //ValuePtr = nullptr;
+    //// nullptr 익셉션이 난다
+    //*ValuePtr = 20;
+
+    //NewPlayerPtr = nullptr;
+    //NewPlayerPtr->Hp = 20;
 }
