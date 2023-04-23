@@ -26,6 +26,68 @@ public:
 
 int main()
 {
+    GameEngineDebug::LeckCheck();
+
+    {
+        GameEngineMap Test;
+        Test.insert(GameEnginePair(10, rand()));
+        Test.insert(GameEnginePair(7, rand()));
+        Test.insert(GameEnginePair(15, rand()));
+        Test.insert(GameEnginePair(25, rand()));
+        Test.insert(GameEnginePair(17, rand()));
+        Test.insert(GameEnginePair(18, rand()));
+        Test.insert(GameEnginePair(2, rand()));
+        Test.insert(GameEnginePair(6, rand()));
+        Test.insert(GameEnginePair(5, rand()));
+        Test.insert(GameEnginePair(4, rand()));
+        Test.insert(GameEnginePair(9, rand()));
+        Test.insert(GameEnginePair(8, rand()));
+        Test.insert(GameEnginePair(1, rand()));
+
+        //{
+        //    GameEngineMap::iterator FindIter = Test.find(7);
+        //    GameEngineMap::iterator NextIter = Test.erase(FindIter);
+        //}
+        //{
+        //    GameEngineMap::iterator FindIter = Test.find(9);
+        //    GameEngineMap::iterator NextIter = Test.erase(FindIter);
+        //}
+
+        //{
+        //    GameEngineMap::iterator FindIter = Test.find(6);
+        //    GameEngineMap::iterator NextIter = Test.erase(FindIter);
+        //}
+
+        //{
+        //    GameEngineMap::iterator FindIter = Test.find(10);
+        //    GameEngineMap::iterator NextIter = Test.erase(FindIter);
+        //}
+
+
+        //{
+        //    GameEngineMap::iterator FindIter = Test.find(10);
+        //    GameEngineMap::iterator NextIter = Test.erase(FindIter);
+        //}
+
+
+        std::cout << "그냥 돌리기" << std::endl;
+        GameEngineMap::iterator StartIter = Test.begin();
+        GameEngineMap::iterator EndIter = Test.end();
+        for (; StartIter != EndIter; ++StartIter)
+        {
+            std::cout << StartIter->first << std::endl;
+        }
+
+        std::cout << "전위 순회" << std::endl;
+        Test.FirstOrder();
+        std::cout << "중위 순회" << std::endl;
+        Test.MidOrder();
+        std::cout << "후위 순회" << std::endl;
+        Test.LastOrder();
+    }
+
+    return 1;
+
     {
         std::list<int> Value;
         Value.push_back(20);
@@ -112,54 +174,4 @@ int main()
         //}
     }
 
-    {
-        GameEngineMap Test;
-        Test.insert(GameEnginePair(10, rand()));
-        Test.insert(GameEnginePair(7, rand()));
-        Test.insert(GameEnginePair(15, rand()));
-        Test.insert(GameEnginePair(25, rand()));
-        Test.insert(GameEnginePair(17, rand()));
-        Test.insert(GameEnginePair(15, rand()));
-        Test.insert(GameEnginePair(18, rand()));
-        Test.insert(GameEnginePair(2, rand()));
-        Test.insert(GameEnginePair(6, rand()));
-        Test.insert(GameEnginePair(5, rand()));
-        Test.insert(GameEnginePair(4, rand()));
-        Test.insert(GameEnginePair(9, rand()));
-        Test.insert(GameEnginePair(8, rand()));
-        Test.insert(GameEnginePair(1, rand()));
-
-        {
-            GameEngineMap::iterator FindIter = Test.find(7);
-            GameEngineMap::iterator NextIter = Test.erase(FindIter);
-        }
-        {
-            GameEngineMap::iterator FindIter = Test.find(9);
-            GameEngineMap::iterator NextIter = Test.erase(FindIter);
-        }
-
-        {
-            GameEngineMap::iterator FindIter = Test.find(6);
-            GameEngineMap::iterator NextIter = Test.erase(FindIter);
-        }
-
-        //{
-        //    GameEngineMap::iterator FindIter = Test.find(10);
-        //    GameEngineMap::iterator NextIter = Test.erase(FindIter);
-        //}
-
-
-        GameEngineMap::iterator StartIter = Test.begin();
-        GameEngineMap::iterator EndIter = Test.end();
-
-        for (; StartIter != EndIter; ++StartIter)
-        {
-            std::cout << StartIter->first << std::endl;
-        }
-
-        for (; StartIter != EndIter; --StartIter)
-        {
-            std::cout << StartIter->first << std::endl;
-        }
-    }
 }

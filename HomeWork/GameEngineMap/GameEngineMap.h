@@ -421,4 +421,3 @@ public:
 
 	MapNode* Root = nullptr;
 };
-
