@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{5C8587B4-88A
 		단축키.txt = 단축키.txt
 		메모리영역.txt = 메모리영역.txt
 		용어설명.txt = 용어설명.txt
+		컴파일과정.txt = 컴파일과정.txt
 		클래스 디폴트.txt = 클래스 디폴트.txt
 	EndProjectSection
 EndProject
@@ -208,6 +209,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "053_FunctionOverloading", "053_FunctionOverloading\053_FunctionOverloading.vcxproj", "{B2396955-F6A7-43E5-BB0D-294A12E593E4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "054_Declaration", "054_Declaration\054_Declaration.vcxproj", "{E7FF8499-AF17-484B-95FC-74A2E919C18F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "055_ClassDeclaration", "055_ClassDeclaration\055_ClassDeclaration.vcxproj", "{86CAA793-45B9-461C-B868-32C34FB9C066}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -953,6 +956,14 @@ Global
 		{E7FF8499-AF17-484B-95FC-74A2E919C18F}.Release|x64.Build.0 = Release|x64
 		{E7FF8499-AF17-484B-95FC-74A2E919C18F}.Release|x86.ActiveCfg = Release|Win32
 		{E7FF8499-AF17-484B-95FC-74A2E919C18F}.Release|x86.Build.0 = Release|Win32
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Debug|x64.ActiveCfg = Debug|x64
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Debug|x64.Build.0 = Debug|x64
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Debug|x86.ActiveCfg = Debug|Win32
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Debug|x86.Build.0 = Debug|Win32
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Release|x64.ActiveCfg = Release|x64
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Release|x64.Build.0 = Release|x64
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Release|x86.ActiveCfg = Release|Win32
+		{86CAA793-45B9-461C-B868-32C34FB9C066}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

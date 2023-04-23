@@ -119,7 +119,7 @@ void Function2()			// Function2는 Function0을 호출해야 한다
 class Monster
 {
 
-}
+};
 
 int main()
 {
