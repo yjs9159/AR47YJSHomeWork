@@ -2,6 +2,8 @@
 #include <map>
 #include <list>
 #include "GameEngineMap.h"
+#include <crtdbg.h>
+
 
 template<typename DataType0, typename DataType1>
 void TestValue(DataType0 _Data0, DataType1 _Data1)
@@ -26,7 +28,6 @@ public:
 
 int main()
 {
-    GameEngineDebug::LeckCheck();
 
     {
         GameEngineMap Test;
@@ -73,9 +74,10 @@ int main()
         std::cout << "그냥 돌리기" << std::endl;
         GameEngineMap::iterator StartIter = Test.begin();
         GameEngineMap::iterator EndIter = Test.end();
-        for (; StartIter != EndIter; ++StartIter)
+        for (; StartIter != EndIter; )
         {
             std::cout << StartIter->first << std::endl;
+            StartIter = Test.erase(StartIter);
         }
 
         std::cout << "전위 순회" << std::endl;
@@ -173,5 +175,8 @@ int main()
         //    Value.first = 20;
         //}
     }
+
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 
 }
