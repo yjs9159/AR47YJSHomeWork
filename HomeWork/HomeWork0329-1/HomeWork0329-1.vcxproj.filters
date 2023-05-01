@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="HomeWork0329.cpp" />
+    <ClCompile Include="HomeWork0329-1.cpp" />
     <ClCompile Include="ConsoleGameMath.cpp">
       <Filter>Level0</Filter>
     </ClCompile>
@@ -11,7 +11,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Level2</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet-1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleGameMath.h">
@@ -23,17 +22,16 @@
     <ClInclude Include="Player.h">
       <Filter>Level2</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet-1.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Level0">
-      <UniqueIdentifier>{8da73125-0012-4811-b3da-7292db87c70d}</UniqueIdentifier>
+      <UniqueIdentifier>{17688127-e30a-48ce-9ab6-40895cc2949f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Level1">
-      <UniqueIdentifier>{5049e60c-569d-405c-a786-69c35c393af3}</UniqueIdentifier>
+      <UniqueIdentifier>{fd4ed9bf-ea25-4cd4-886e-f73663d4f7d6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Level2">
-      <UniqueIdentifier>{c9ce6a6c-a106-4a79-abda-d92b1946c642}</UniqueIdentifier>
+      <UniqueIdentifier>{9915794a-84e3-4718-b430-de511461c7fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

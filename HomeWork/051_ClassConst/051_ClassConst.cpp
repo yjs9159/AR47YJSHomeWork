@@ -3,6 +3,15 @@
 class Player
 {
 public:
+	static void GlobalFunction()
+	{
+		// 객체가 필요없이 호출할 수 있기 때문에
+		// == this가 필요로 하지 않는 함수가 된다
+		// this가 존재하지 않으므로 함수 뒤에 const를 붙일 수 없게 된다
+		// const로 만들 this가 없게 되는 것이기 때문
+	}
+
+
 	int GetHp() const
 	{
 		return Hp;

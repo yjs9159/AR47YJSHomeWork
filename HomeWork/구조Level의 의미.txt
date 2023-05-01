@@ -1,10 +1,10 @@
+Level이 낮을수록 좀 더 근본적인 클래스이다
 
-
-Level이 낮을수록 좀더 근간 혹은 근본적인 클래스이다
-
-ex) Level1의 ConsoleGameScreen은 화면을 의미하는데
+ex) Level1의	 ConsoleGameScreen은 화면을 의미하는데
 	화면이 존재해야 플레이어가 존재하므로
-	플레이어는 ConsoleGameScreen보다 레벨 등급이 높을 수 밖에 없다
+	플레이어는 ConsoleGameScreen보다 레벨등급이 클 수 밖에 없다
 
-절대로 Level0의 헤더에는 낮은 레벨의 헤더를 include하거나
-	알아서도 안된다.
+절대로 Level0의 헤더에는 그보다 낮은 레벨의 헤더를 include 하거나
+알아서도 안된다
+
+ex) 화면이 봄버맨을 알아야한다 -> 이 화면은 봄버맨만 만들 수 있는 화면이 된다
