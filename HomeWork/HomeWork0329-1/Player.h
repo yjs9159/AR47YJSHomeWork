@@ -1,5 +1,6 @@
 #pragma once
 #include "ConsoleGameMath.h"
+#include "Bullet.h"
 
 class ConsoleGameScreen;
 class Player
@@ -18,6 +19,10 @@ public:
 		return Pos;
 	}
 	
+	inline bool IsFire()
+	{
+		return Fire;
+	}
 
 	
 	// 화면 바깥으로 못나가게 하기
@@ -29,7 +34,14 @@ protected:
 private:
 	static const int InterFrame = 200;
 
+	bool Fire = false;  
+
 	int2 Pos = int2(0, 0);
+
+	// 이런 구조를 Has a라고 한다
+	// Bullet NewBullet;  플레이어의 신체 내부에 총알이 있다
+	// Bullet* NewBullet;  바깥에 있는 총알을 조작할 수 있다
+
 };
 
 

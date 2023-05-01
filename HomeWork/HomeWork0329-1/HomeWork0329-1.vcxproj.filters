@@ -11,6 +11,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Level2</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleGameMath.h">
@@ -20,6 +23,9 @@
       <Filter>Level1</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
       <Filter>Level2</Filter>
     </ClInclude>
   </ItemGroup>

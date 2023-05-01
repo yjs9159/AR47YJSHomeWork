@@ -68,6 +68,10 @@ void Player::Input()
 		}
 		break;
 
+	case 'f':
+	case 'F':
+		Fire = true;
+
 	default:
 		break;
 	}
