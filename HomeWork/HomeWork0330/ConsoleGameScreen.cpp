@@ -20,36 +20,39 @@ void ConsoleGameScreen::ScreenPrint() const
 	{
 		for (size_t x = 0; x < ScreenXSize; x++)
 		{
-			// Arr[y][x] = 'b';
 			printf_s("%c", Arr[y][x]);
 		}
 		printf_s("\n");
 	}
 }
-
-// 이녀석을 무조건 사용해서 플레이어가 바깥으로 못나가게 만드세요.
+// IsScreenOver()와 InPut()
+// ConsoleGameScreen.IsScreenOver
+// Player.Input
 bool ConsoleGameScreen::IsScreenOver(const int2& _Pos) const
 {
 	if (0 > _Pos.X)
 	{
-		return true;
+		return true; // 화면에서 나갔다 => true
+		// 화면에서 안나갔다 => false
 	}
 
 	if (0 > _Pos.Y)
 	{
-		return true;
+		return true; // 화면에서 나갔다 => true
+		// 화면에서 안나갔다 => false
 	}
 
 	if (ScreenXSize <= _Pos.X)
 	{
-		return true;
+		return true; // 화면에서 나갔다 => true
+		// 화면에서 안나갔다 => false
 	}
 
 	if (ScreenYSize <= _Pos.Y)
 	{
-		return true;
+		return true; // 화면에서 나갔다 => true
+		// 화면에서 안나갔다 => false
 	}
-
 	return false;
 }
 
@@ -67,9 +70,10 @@ void ConsoleGameScreen::SetScreenCharacter(const int2& _Pos, char _Ch)
 
 ConsoleGameScreen::ConsoleGameScreen()
 {
+
 }
 
-int2 ConsoleGameScreen::GetScreenSize()
+int2 ConsoleGameScreen::GetScreenSize() // 나의 스크린 사이즈를 가져오는 함수
 {
 	return int2{ ScreenXSize, ScreenYSize };
 }

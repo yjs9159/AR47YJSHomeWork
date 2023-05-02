@@ -1,12 +1,12 @@
 #pragma once
 #include "ConsoleGameMath.h"
 
-// 이게 1단계
-// 근본오브 근본 수학 물리 
+
 class ConsoleGameScreen
 {
 public:
-	// 클래스 내부에 전역변수를 선언할수가 있습니다.
+	// 클래스 내부에 전역변수를 선언할 수 있다
+	// static을 통해서 
 	static const int ScreenYSize = 10;
 	static const int ScreenXSize = 20;
 
@@ -15,28 +15,29 @@ public:
 		return MainScreen;
 	}
 
-	static int2 GetScreenSize();
-
+	static int2 GetScreenSize(); // 나의 스크린 사이즈를 가져오는 함수
+	
 	void ScreenClear();
 
 	void ScreenPrint() const;
-
+	// IsScreenOver()와 InPut()
+	// ConsoleGameScreen.IsScreenOver
+	// Player.Input
 	bool IsScreenOver(const int2& _Pos) const;
 
 	void SetScreenCharacter(const int2& _Pos, char _Ch);
 
 protected:
 
-private:
+private:			// 생성자를 private로 만듦으로써 여러개의 스크린을 만드는 것을 억제한다
 	char Arr[ScreenYSize][ScreenXSize] = { 0, };
 
 	ConsoleGameScreen();
 
-	// 싱글톤 패턴이라고 합니다.
-	// 패턴이란 => 클래스를 짤때 이러이러한 구조가 정말 많이 사용된다.
-	// 갱스오브포라고 불리는 프로그래머 동호회가 있었다.
-	// 클래스간의 관계나 구조를 짜는 방식이 비슷한 녀석들을 모아서 이름을 붙였는데.
-	// 그걸 디자인 패턴이라고 하고.
-	// 아무도 안써요.
+	// 싱글톤 패턴이라고 한다
+	// 싱글톤 패턴이란 => 클래스를 짤 때 이러이러한 구조가 정말 많이 사용된다
+	// 생성자를 막고 객체를 static이나 전역으로 하나만 만든다
+	// 그러면 프로그램 내의 이 클래스의 객체는 한개가 만들어진다
 	static ConsoleGameScreen MainScreen;
+
 };

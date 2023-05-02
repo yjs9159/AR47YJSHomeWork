@@ -4,36 +4,6 @@
 #include <Windows.h>
 #include "Player.h"
 
-Bullet Bullet::ArrBullet[Bullet::ArrBulletCount];
-
-
-void Bullet::AllRender()
-{
-	for (size_t i = 0; i < Bullet::ArrBulletCount; i++)
-	{
-		if (false == ArrBullet[i].IsFire())
-		{
-			continue;
-		}
-
-		ArrBullet[i].Render();
-	}
-
-}
-
-void Bullet::AllUpdate()
-{
-	for (size_t i = 0; i < Bullet::ArrBulletCount; i++)
-	{
-		if (false == ArrBullet[i].IsFire())
-		{
-			continue;
-		}
-
-		ArrBullet[i].Update();
-	}
-}
-
 Bullet::Bullet()
 {
 
@@ -41,16 +11,31 @@ Bullet::Bullet()
 
 void Bullet::Render()
 {
-	if (true == Fire)
+	if (nullptr == MasterPlayer)
+	{
+		return;
+	}
+
+	if (true == MasterPlayer->IsFire())
 	{
 		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '^');
+
 	}
 }
 
 void Bullet::Update()
 {
-	if (true == Fire)
+	if (nullptr == MasterPlayer)
+	{
+		return;
+	}
+
+	if (true == MasterPlayer->IsFire())
 	{
 		--Pos.Y;
+	}
+	else
+	{
+		Pos = MasterPlayer->GetPos();
 	}
 }

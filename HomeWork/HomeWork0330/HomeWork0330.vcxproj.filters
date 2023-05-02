@@ -14,9 +14,18 @@
     <ClCompile Include="Player.cpp">
       <Filter>Level2</Filter>
     </ClCompile>
-    <ClCompile Include="ShootingGame.cpp">
-      <Filter>Level2</Filter>
-    </ClCompile>
+    <ClCompile Include="ShootingGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Level0">
+      <UniqueIdentifier>{4964740c-2521-4225-b208-8263f2337048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level1">
+      <UniqueIdentifier>{e8bd9cf7-451b-4a30-a4f2-9940e621f725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level2">
+      <UniqueIdentifier>{73b8fb4c-d58c-431d-9fc2-c33c90921d08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleGameMath.h">
@@ -31,19 +40,6 @@
     <ClInclude Include="Player.h">
       <Filter>Level2</Filter>
     </ClInclude>
-    <ClInclude Include="ShootingGame.h">
-      <Filter>Level2</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Level0">
-      <UniqueIdentifier>{ef919936-fc76-4e08-8553-40fb40f79302}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Level1">
-      <UniqueIdentifier>{c989056b-6890-4784-a4f0-0c94bedd4800}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Level2">
-      <UniqueIdentifier>{c4dd42ae-16e6-4c15-86b7-e8730de2396b}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="ShootingGame.h" />
   </ItemGroup>
 </Project>
