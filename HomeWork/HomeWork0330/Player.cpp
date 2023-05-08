@@ -2,15 +2,13 @@
 #include "ConsoleGameScreen.h"
 #include <conio.h>
 #include <windows.h>
+#include "Bullet.h"
 
 Player::Player()
 {
-
+	RenderChar = '*';
 }
 
-
-// 화면 바깥으로 못나가게 하기
-// ConsoleGameScreen 클래스의 IsScreenOver를(무조건 사용해서) InPut함수와 연결하기
 void Player::Input()
 {
 
@@ -70,8 +68,10 @@ void Player::Input()
 
 	case 'f':
 	case 'F':
-		Fire = true;
-
+	{
+		ShootUpdate();
+	}
+		break;
 	default:
 		break;
 	}
@@ -79,7 +79,15 @@ void Player::Input()
 	Sleep(InterFrame);
 }
 
-void Player::Render()
+void Player::ShootUpdate()
 {
-	ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '*');
+	Bullet& NewBullet = BulletPtr[BulletCount];
+	NewBullet.SetPos(Pos);
+	NewBullet.On();
+	++BulletCount;
+
+	if (BulletCount >= Bullet::ArrBulletCount)
+	{
+		BulletCount = 0;
+	}
 }

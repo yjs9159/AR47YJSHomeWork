@@ -15,6 +15,12 @@
       <Filter>Level2</Filter>
     </ClCompile>
     <ClCompile Include="ShootingGame.cpp" />
+    <ClCompile Include="Monster.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleGameObject.cpp">
+      <Filter>Level1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Level0">
@@ -41,5 +47,11 @@
       <Filter>Level2</Filter>
     </ClInclude>
     <ClInclude Include="ShootingGame.h" />
+    <ClInclude Include="Monster.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleGameObject.h">
+      <Filter>Level1</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

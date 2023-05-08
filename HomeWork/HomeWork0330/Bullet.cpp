@@ -3,39 +3,52 @@
 #include <conio.h>
 #include <Windows.h>
 #include "Player.h"
+#include "ConsoleGameObject.h"
 
-Bullet::Bullet()
+Bullet Bullet::ArrBullet[Bullet::ArrBulletCount];
+
+void Bullet::AllOff()
 {
-
+	for (size_t i = 0; i < Bullet::ArrBulletCount; i++)
+	{
+		ArrBullet[i].Off();			// 불렛을 플레이어가 어떠한 행동을 했을 때 반응하기 때문에 플레이어의 뒤에 놓는다
+	}
 }
 
-void Bullet::Render()
+void Bullet::AllRender()
 {
-	if (nullptr == MasterPlayer)
+	for (size_t i = 0; i < Bullet::ArrBulletCount; i++)
 	{
-		return;
-	}
+		if (false == ArrBullet[i].IsUpdate())
+		{
+			continue;
+		}
 
-	if (true == MasterPlayer->IsFire())
+		ArrBullet[i].Render();			// 불렛을 플레이어가 어떠한 행동을 했을 때 반응하기 때문에 플레이어의 뒤에 놓는다
+	}
+}
+
+void Bullet::AllUpdate()
+{
+	for (size_t i = 0; i < Bullet::ArrBulletCount; i++)
 	{
-		ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '^');
+		if (false == ArrBullet[i].IsUpdate())
+		{
+			continue;
+		}
 
+		ArrBullet[i].Update();			// 불렛을 플레이어가 어떠한 행동을 했을 때 반응하기 때문에 플레이어의 뒤에 놓는다
 	}
+}
+Bullet::Bullet()
+{
+	RenderChar = '^';
 }
 
 void Bullet::Update()
 {
-	if (nullptr == MasterPlayer)
-	{
-		return;
-	}
-
-	if (true == MasterPlayer->IsFire())
+	if (true == IsUpdate())
 	{
 		--Pos.Y;
-	}
-	else
-	{
-		Pos = MasterPlayer->GetPos();
 	}
 }
