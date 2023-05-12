@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f250ca3f-825f-4300-90ee-ef036a8a8413}</ProjectGuid>
-    <RootNamespace>My060FunctionPointer4</RootNamespace>
+    <ProjectGuid>{deeffda3-439c-4f0d-bbfe-d612179956f3}</ProjectGuid>
+    <RootNamespace>My087VirtualDestructer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>060_FunctionPointer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="060_FunctionPointer.cpp" />
+    <ClCompile Include="087_VirtualDestructer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

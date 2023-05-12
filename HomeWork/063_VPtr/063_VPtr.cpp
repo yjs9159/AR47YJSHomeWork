@@ -1,20 +1,58 @@
 ﻿#include <iostream>
 
-// virtual이 붙어있는 클래스가 존재한다면
-// 이 클래스의 객체가 생성될때
-// void(*__Vfptr)
-// 함수 포인터의 배열을 만들어내고 그걸 함수 포인터의 포인터로 저장한다
-//void(**Vptr)()
+// virtual이 붙어있는 클래스는
+// 이 클래스의 객체가 생성될 때
+// void(*__vfptr[???])() <= 가상함수 테이블이라고 한다
+// 
+// 함수포인터의 배열을 만들어내고 그걸 함수포인터의 포인터로 저장한다
+// void(**__vfptr)();
 
+class FightUnit
+{
+public:
+	virtual void Damage()
+	{
 
-// 업캐스팅 => 자식형을 부모형으로 만드는 것
-// 다운캐스팅 => 부코형을 여러개의 자식들중 하나로 선택하는 것
-// 안전하게 다운캐스팅을 하는 방법이 존재하고 그 이외의 방식으로
-// 그냥 하면 절대로 안됨
+	}
+
+	virtual void FightStatusRender()
+	{
+
+	}
+
+public:
+	FightUnit()
+	{
+		this;
+		int a = 0;
+	}
+};
+
+class Player : public FightUnit
+{
+	void Damage() override
+	{
+
+	}
+
+	void FightStatusRender() override
+	{
+
+	}
+
+public:
+	Player()
+	{
+		this;
+		int a = 0;
+	}
+};
+
 int main()
 {
-
-
+	int Value = sizeof(Player); // 아무 것도 없는 빈 클래스의 크기는 1바이트이다
+	
+	Player NewPlayer;
 
 
 }

@@ -7,5 +7,6 @@ void ConsoleGameObject::Render()
 	{
 		return;
 	}
+
 	ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, RenderChar);
 }

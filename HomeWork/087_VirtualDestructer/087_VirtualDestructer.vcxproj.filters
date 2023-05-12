@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="060_FunctionPointer.cpp">
+    <ClCompile Include="087_VirtualDestructer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

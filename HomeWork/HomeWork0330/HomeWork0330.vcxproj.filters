@@ -14,12 +14,14 @@
     <ClCompile Include="Player.cpp">
       <Filter>Level2</Filter>
     </ClCompile>
-    <ClCompile Include="ShootingGame.cpp" />
     <ClCompile Include="Monster.cpp">
       <Filter>Level2</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleGameObject.cpp">
       <Filter>Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootingGame.cpp">
+      <Filter>Level2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,12 +48,14 @@
     <ClInclude Include="Player.h">
       <Filter>Level2</Filter>
     </ClInclude>
-    <ClInclude Include="ShootingGame.h" />
     <ClInclude Include="Monster.h">
       <Filter>Level2</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleGameObject.h">
       <Filter>Level1</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingGame.h">
+      <Filter>Level2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

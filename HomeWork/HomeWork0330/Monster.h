@@ -19,7 +19,11 @@ public:
 		DownCheck = true;
 	}
 
+	void Render() override;
+
 private:
+	int DeathTime = 4;
+
 	bool DownCheck = false;
 	int Dir = 1; // Dir이 1이 되거나 -1이 된다면 방향이 바뀐다
 };
