@@ -42,6 +42,18 @@ public:
 		return ArrPtr[_Index];
 	}
 
+	void ReSize(int _Value)
+	{
+		// 기존의 할당된 배열을 알고 있는 것은 ArrPtr
+		if (nullptr == ArrPtr)
+		{
+			delete[] ArrPtr;
+			ArrPtr = nullptr;
+		}
+
+		ArrPtr = new DataType[_Value];
+		ArrCount = _Value;
+	}
 protected:
 
 private:

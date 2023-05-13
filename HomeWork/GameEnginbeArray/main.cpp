@@ -15,8 +15,12 @@ int main()
 	}
 
 	{
+		//					 600¹øÁö
+		// int* ArrPtr = new int[20]
 		GameEngineArray Array0(20);
 		// GameEngineArray Array1;
+
+		Array0.ReSize(10);
 
 		// Array0 = Array1
 
