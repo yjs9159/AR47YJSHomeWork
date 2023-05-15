@@ -1,5 +1,5 @@
 #pragma once
-#include <GameEngineBase/GameEngineDebug.h> 
+#include "..\GameEngineBase\GameEngineDebug.h"
 
 typedef int DataType;
 

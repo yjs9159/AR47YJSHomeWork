@@ -5,8 +5,6 @@ ConsoleGameScreen ConsoleGameScreen::MainScreen;
 
 void ConsoleGameScreen::ScreenClear()
 {
-	system("cls");
-
 	for (size_t y = 0; y < ScreenYSize; y++)
 	{
 		for (size_t x = 0; x < ScreenXSize; x++)

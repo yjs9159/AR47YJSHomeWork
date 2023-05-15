@@ -147,7 +147,7 @@ int main()
 		Test<Bullet> NewTestBullet;
 		NewTestBullet.Value.Update();
 
-		NewTestInt = NewTestBullet;
+		// NewTestInt = NewTestBullet;
 
 		// 클래스는 인자추론이 안된다
 	}
