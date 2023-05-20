@@ -240,6 +240,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineConsole", "GameEn
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork0407", "HomeWork0407\HomeWork0407.vcxproj", "{F822CC6B-79D7-40FB-A6C6-57DA17F63481}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "071_ClassNew", "071_ClassNew\071_ClassNew.vcxproj", "{E939DADB-74DD-415E-8B65-5EB54C3E981B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -1104,6 +1106,14 @@ Global
 		{F822CC6B-79D7-40FB-A6C6-57DA17F63481}.Release|x64.Build.0 = Release|x64
 		{F822CC6B-79D7-40FB-A6C6-57DA17F63481}.Release|x86.ActiveCfg = Release|Win32
 		{F822CC6B-79D7-40FB-A6C6-57DA17F63481}.Release|x86.Build.0 = Release|Win32
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Debug|x64.ActiveCfg = Debug|x64
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Debug|x64.Build.0 = Debug|x64
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Debug|x86.ActiveCfg = Debug|Win32
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Debug|x86.Build.0 = Debug|Win32
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Release|x64.ActiveCfg = Release|x64
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Release|x64.Build.0 = Release|x64
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Release|x86.ActiveCfg = Release|Win32
+		{E939DADB-74DD-415E-8B65-5EB54C3E981B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
