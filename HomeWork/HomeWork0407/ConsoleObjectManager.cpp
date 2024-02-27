@@ -50,7 +50,7 @@ void ConsoleObjectManager::ConsoleAllObjectRender()
 
 			Object->Render();
 		}
-\
+
 	}
 
 	ConsoleGameScreen::GetMainScreen().ScreenPrint();

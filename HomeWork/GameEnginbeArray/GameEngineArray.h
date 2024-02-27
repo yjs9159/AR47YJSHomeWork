@@ -65,7 +65,7 @@ public:
 
 		for (size_t i = 0; i < CopySize; i++)
 		{
-			ArrPtr[i] = NewPtr[i];
+			NewPtr[i] = ArrPtr[i];
 		}
 
 		if (nullptr != ArrPtr)

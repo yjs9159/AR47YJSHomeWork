@@ -5,6 +5,7 @@
 #include "ConsoleObjectManager.h"
 #include "Bomb.h"
 #include "GameEnum.h"
+#include "ConsoleObjectManager.h"
 
 bool Player::IsGameUpdate = true;
 
@@ -38,6 +39,9 @@ void Player::Update()
 	char Ch = _getch();
 
 	int2 NextPos = { 0, 0 };
+
+	// 폭탄이 설치되었다면 못통과하게 만들기
+	GameEngineArray<ConsoleGameObject*>& BombGroup = ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
 
 	switch (Ch)
 	{
